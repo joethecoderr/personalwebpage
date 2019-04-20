@@ -1,0 +1,97 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <div id="resume-header" class="row">
+      <div class="col-3">
+        <img id="profile-picture" src="/paginapersonalphp/public/uploads/profilepicture.jpg" class="img-responsive" height = "100%" width = "100%" >
+      </div>
+      <div class="col">
+        <h1>{{ name }}</h1>
+        <h2>Software Engineer</h2>
+        <ul>
+          <li>Mail: joel.e.gaspar@gmail.com</li>
+          <li>Phone: 6566992637</li>
+          <li>LinkedIn: https://linkedin.com</li>
+          <li>Twitter: @JoelGRMX</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="border-bottom-gray" >Career Summary</h2>
+        <p>
+        As a software engineer, I have experience in the whole software development cycle, from design to testing and deployment. Currently working with the implementation of a ERP software system, developing new features, improving some of them, supporting users and evangelizing about the importance of involving software systems in every process, this includes encouraging users to give feedback and proposing new ideas that can help improve the productivity and efficiency.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div>
+          <h2 class="border-bottom-gray" >Work Experience</h2>
+
+            {% for job in jobs %}
+            <div class = "row work-position">
+              <div class = "col-2">
+              <h5><img src={{job.image}} alt="" width = "110%" height = "110%"></h5>
+              </div>
+                <div class = "col">
+                  <strong><h5>{{ job.title }} </strong></h5>
+                  <p>{{ job.months }} months</p>
+                  <p>{{ job.description }}</p>
+                </div>
+              </div>
+            {% endfor %}
+
+        </div>
+        <div>
+            <h1 class="border-bottom-gray">Projects</h1>
+            {% for project in projects %}
+            <div class = "row work-position">
+            <div class="col-2">
+                <h5><img src={{project.image}} alt="" width = "110%" height = "110%"></h5>
+                    </div>
+                      <div class="col">
+                      <strong><h4>{{ project.title }} </strong></h4>
+                        <p>{{project.description}}</p>
+                        <strong>Technologies used:</strong>
+                        <span class="badge badge-secondary">PHP</span>
+                        <span class="badge badge-secondary">HTML</span>
+                        <span class="badge badge-secondary">CSS</span>
+                      </div>
+                      </div>
+
+            {% endfor %}
+           </div>
+
+      </div>
+      <div class="col-3">
+        <h3 class="border-bottom-gray" >Skills & Tools</h3>
+        <h4>Backend</h4>
+        <ul>
+          <li>PHP</li>
+        </ul>
+        <h4>Frontend</h4>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+        <h4>Frameworks</h4>
+        <ul>
+          <li>Laravel</li>
+          <li>Bootstrap</li>
+        </ul>
+        <h3 class="border-bottom-gray" >Languages</h3>
+        <ul>
+          <li>Spanish</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+    <div id="resume-footer" class="row">
+      <div class="col">
+          Designed by @JoelGRMX
+      </div>
+    </div>
+{% endblock %}

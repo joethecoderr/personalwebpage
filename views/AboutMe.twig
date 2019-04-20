@@ -1,0 +1,88 @@
+{% extends "layout.twig" %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/slideshowstyle.css">
+
+  <div id="resume-header" class="row">
+      <div class="col">
+        <h2>Me, the human</h2>
+        <p> I like to think about me as something else than just a Software Developer. I am a human being that enjoys lots of things like
+        good food, knowing new places, music, read books, working out, having a beer with friends. Yeah, I know, it may sound kind of cliche, but who could
+        not like that? I believe in balance between working and living. I really love programming and innovation stuff as much as I love to have good moments
+        with the people I love.
+         </p>
+         <p>
+         <br>
+         <ul>
+         <li>
+         Find me on instagram and github as @joethecoder </br> </li>
+         </ul>
+         </p>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 5</div>
+    <img src="res/me.jpg" style="width:75%">
+    <div class="text">Peace and Code</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 5</div>
+    <img src="res/me2.jpg" style="width:75%">
+    <div class="text">Peace and Code</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 5</div>
+    <img src="res/me3.jpg" style="width:75%">
+    <div class="text">Peace and Code</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="res/me4.jpg" style="width:75%">
+    <div class="text">Peace and Code</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="res/me4.jpg" style="width:75%">
+    <div class="text">Peace and Code</div>
+  </div>
+
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 6000);
+}
+</script>
+
+
+    {% endblock %}

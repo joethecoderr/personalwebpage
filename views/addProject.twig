@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h1>Add Job</h1>
+    <div class="alert alert-primary" role="alert">
+      {{ responseMessage }}
+    </div>
+
+    <form action="/paginapersonalphp/projects/add" method="post" enctype="multipart/form-data" >
+        <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Title:</label>
+        <input type="text" name="title" style="width:70%" ><br>
+        <label for="">Description:</label>
+        <input type="text" name="description" style="height:300px;width:70%"><br><br>
+        <input type="file" name="logo"><br>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
